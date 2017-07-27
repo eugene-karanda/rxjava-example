@@ -2,6 +2,7 @@ package org.overmind.rxjavaexample.service;
 
 import io.reactivex.Observable;
 import org.overmind.rxjavaexample.model.Github;
+import retrofit2.Response;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
@@ -14,7 +15,7 @@ public interface GithubService {
     String SERVICE_ENDPOINT = "https://api.github.com";
 
     @GET("/users/{nickname}")
-    Observable<Github> find(
+    Observable<Response<Github>> find(
         @Path("nickname") String nickname
     );
 
